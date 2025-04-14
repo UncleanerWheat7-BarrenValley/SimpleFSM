@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
-public class FSM : MonoBehaviour
+public abstract class FSM : MonoBehaviour
 {
-    protected virtual void Initialize() { }
-    protected virtual void FSMUpdate() { }
-    protected virtual void FSMFixedUpdate() { }
+    protected abstract void Initialize();
+    protected abstract void FSMUpdate();
+    protected abstract void FSMFixedUpdate();
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

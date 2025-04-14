@@ -12,6 +12,8 @@ public class SimpleFSM : FSM
 
     public FSMState currentState = FSMState.Patrol;
 
+    public FSM realFSM;
+
     [SerializeField]
     private float speed = 2.0f;
     private float rotateSpeed = 2.0f;
@@ -39,6 +41,8 @@ public class SimpleFSM : FSM
         pointList = GameObject.FindGameObjectsWithTag("WanderPoint");
 
         FindNextPoint();
+
+        realFSM = GetComponent<FSM>();
 
         GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
         rigidbody = GetComponent<Rigidbody>();
@@ -180,5 +184,10 @@ public class SimpleFSM : FSM
         }
 
         Destroy(gameObject, 2.0f);
+    }
+
+    protected override void FSMFixedUpdate()
+    {
+        
     }
 }
